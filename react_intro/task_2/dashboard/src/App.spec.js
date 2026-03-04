@@ -16,13 +16,14 @@ test("renders an image", () => {
     const image = screen.getByAltText(/holberton logo/i);
     expect(image).toBeInTheDocument();
 });
-test("2 labels email e password",  () => {
-    render(<App/>)
-    const labelEmail = screen.getByRole('label').toHaveTextContent(/Email/i);
-    const labelPassword = screen.getByRole('label').toHaveTextContent(/Password/i);
+test("renders 2 labels Email and Password", () => {
+    render(<App />);
+    const labelEmail = screen.getByText(/email/i);
+    const labelPassword = screen.getByText(/password/i);
+
     expect(labelEmail).toBeInTheDocument();
     expect(labelPassword).toBeInTheDocument();
-})
+});
 
 test("renders 2 input elements (email and password)", () => {
     render(<App />);

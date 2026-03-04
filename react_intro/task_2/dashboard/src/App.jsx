@@ -15,14 +15,14 @@ const App = () => {
       </div>
       <div className='App-header'>
         <img src={logo} alt="holberton logo" />
-        <h1 style={{ color:'#e1003c'}}>School dashboard</h1>
+        <h1 style={{ color: '#e1003c' }}>School dashboard</h1>
       </div>
       <div className='App-body'>
-        
+
         <p >Login to access the full dashboard</p>
         <label htmlFor='email' >Email</label>
-        <input type='email' name='Email'  placeholder='Write Email'  id='email'  />
-        <label  htmlFor ='password' >Password</label>
+        <input type='text' name='Email' placeholder='Write Email' id='email' />
+        <label htmlFor='password' >Password</label>
         <input type='password' name='password' placeholder='Write password' id='password' />
         <button>OK</button>
 
