@@ -16,7 +16,7 @@ test("renders 2 input elements (email and password)", () => {
     // Merr input-in e email
     const emailInput = screen.getByLabelText(/email/i);
     expect(emailInput).toBeInTheDocument();
-    expect(emailInput).toHaveAttribute("type", "text");
+    expect(emailInput).toHaveAttribute("type", "email");
 
     // Merr input-in e password
     const passwordInput = screen.getByLabelText(/password/i);
