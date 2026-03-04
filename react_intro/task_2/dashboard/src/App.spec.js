@@ -2,18 +2,29 @@ import { render, screen } from "@testing-library/react";
 import App from "./App";
 
 
-test("renders h1 with School Dashboard text",  () => {
+test("2 labels email e password",  () => {
     render(<App/>)
-    expect(screen.getByRole('heading')).toHaveTextContent(/School dashboard/i);
+    const labelEmail = screen.getByRole('label').toHaveTextContent(/Email/i);
+    const labelPassword = screen.getByRole('label').toHaveTextContent(/Password/i);
+    expect(labelEmail).toBeInTheDocument();
+    expect(labelPassword).toBeInTheDocument();
 })
 
-test("renders correct text in body and footer paragraphs", () => {
-    render(<App />)
-    expect(screen.getByText(/Login to access the full dashboard/i));
-    expect(screen.getByText(/Copyright/i));
-})
-test("renders an image", () => {
+test("renders 2 input elements (email and password)", () => {
     render(<App />);
-    const image = screen.getByAltText(/holberton logo/i);
-    expect(image).toBeInTheDocument();
+
+    // Merr input-in e email
+    const emailInput = screen.getByLabelText(/email/i);
+    expect(emailInput).toBeInTheDocument();
+    expect(emailInput).toHaveAttribute("type", "text");
+
+    // Merr input-in e password
+    const passwordInput = screen.getByLabelText(/password/i);
+    expect(passwordInput).toBeInTheDocument();
+    expect(passwordInput).toHaveAttribute("type", "password");
+});
+test("renders an button", () => {
+    render(<App />);
+    const button = screen.getByRole('button').toHaveTextContent(/OK/i);;
+    expect(button).toBeInTheDocument();
 });

@@ -20,9 +20,9 @@ const App = () => {
       <div className='App-body'>
         
         <p >Login to access the full dashboard</p>
-        <label for='email' >Email</label>
+        <label htmlFor='email' >Email</label>
         <input type='text' name='Email'  placeholder='Write Email'  id='email'  />
-        <label  for ='password' > Password</label>
+        <label  htmlFor ='password' > Password</label>
         <input type='password' name='password' placeholder='Write password' id='password' />
         <button>OK</button>
 
