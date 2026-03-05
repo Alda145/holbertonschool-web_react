@@ -9,7 +9,7 @@ const Notification = () => {
             <ul>
                 <li data-priority="default">New course available</li>
                 <li data-priority="urgent">New resume available</li>
-                <li data-priority="urgent">{getLatestNotification()}</li>
+                <li data-priority="urgent">Urgent requirement - complete by EOD</li>
             </ul>
             <button
                 aria-label="Close"
