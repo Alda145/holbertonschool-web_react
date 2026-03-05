@@ -11,10 +11,7 @@ const Notifications = () => {
                 <li data-priority="urgent">New resume available</li>
                 <li data-priority="urgent">Urgent requirement - complete by EOD</li>
             </ul>
-            <button
-                aria-label="Close"
-                onClick={() => console.log('Close button has been clicked')}
-            >
+            <button aria-label="Close" onClick={() => console.log('Close button has been clicked')}>
                 <img src={close} alt="close button" />
             </button>
         </div>
