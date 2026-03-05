@@ -5,7 +5,7 @@ describe('Notification component', () => {
 
     test('renders the notifications title', () => {
         render(<Notification />);
-        const title = screen.getByText(/here is the list of notifications/i);
+        const title = screen.getByText(/Here is the list of notifications/i);
         expect(title).toBeInTheDocument();
     });
 
