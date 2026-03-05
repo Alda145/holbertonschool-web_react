@@ -2,10 +2,9 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import Notification from './Notifications';
 
 describe('Notification component', () => {
-
     test('renders the notifications title', () => {
         render(<Notification />);
-        const title = screen.getByText(/Here is the list of notifications/i);
+        const title = screen.getByText(/here is the list of notifications/i);
         expect(title).toBeInTheDocument();
     });
 
@@ -29,11 +28,8 @@ describe('Notification component', () => {
 
         fireEvent.click(button);
 
-        expect(consoleSpy).toHaveBeenCalledWith(
-            'Close button has been clicked'
-        );
+        expect(consoleSpy).toHaveBeenCalledWith('Close button has been clicked');
 
         consoleSpy.mockRestore();
     });
-
 });
