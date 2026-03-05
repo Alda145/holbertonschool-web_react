@@ -30,7 +30,7 @@ describe('Notification component', () => {
         fireEvent.click(button);
 
         expect(consoleSpy).toHaveBeenCalledWith(
-            'Close button has been clicked.'
+            'Close button has been clicked'
         );
 
         consoleSpy.mockRestore();
