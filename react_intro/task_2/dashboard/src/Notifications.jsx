@@ -3,7 +3,7 @@ import close from './assets/close-button.png'
 import { getLatestNotification } from './utils'
 
 const Notification = () => {
-    return <div className="notification-items  overflow-hidden ">
+    return <div className="notification-items   ">
 
         <p>Here is the list of notifications</p>
         <ul>
@@ -19,7 +19,7 @@ const Notification = () => {
 
 
         </ul>
-        <button aria-label='Close' style={{ float: "right" }} onClick={() => { console.log('Close button has been clicked to the console.') }} >
+        <button aria-label='Close' style={{ position:"absolute" , top:"10px", right:"10px"}} onClick={() => { console.log('Close button has been clicked to the console.') }} >
 
             <img src={close} style={{ width: '30px', height: '30px' }} />
         </button>
