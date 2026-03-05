@@ -8,7 +8,7 @@ function Notifications() {
             <button
                 aria-label="Close"
                 onClick={() => console.log("Close button has been clicked")}
-                style={{ position: "absolute", right: 0 }}
+                style={{ position: "absolute", right: "0" }}
             >
                 <img src={closeIcon} alt="close" />
             </button>
