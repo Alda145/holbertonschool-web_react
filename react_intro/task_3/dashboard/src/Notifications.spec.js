@@ -1,7 +1,8 @@
+
 import { render, screen, fireEvent } from '@testing-library/react';
 import Notifications from './Notifications';
 
-describe('Notification component', () => {
+describe('Notifications component', () => {
     test('renders the notifications title', () => {
         render(<Notifications />);
         const title = screen.getByText(/here is the list of notifications/i);
@@ -28,6 +29,7 @@ describe('Notification component', () => {
         fireEvent.click(button);
 
         expect(consoleSpy).toHaveBeenCalledWith('Close button has been clicked');
+
         consoleSpy.mockRestore();
     });
 });
