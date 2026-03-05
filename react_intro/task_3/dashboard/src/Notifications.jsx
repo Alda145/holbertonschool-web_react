@@ -1,6 +1,5 @@
 import './Notifications.css';
 import close from './assets/close-button.png';
-import { getLatestNotification } from './utils';
 
 const Notification = () => {
     return (
@@ -13,10 +12,9 @@ const Notification = () => {
             </ul>
             <button
                 aria-label="Close"
-                style={{ position: "absolute", top: "10px", right: "10px" }}
                 onClick={() => console.log('Close button has been clicked')}
             >
-                <img src={close} style={{ width: '30px', height: '30px' }} />
+                <img src={close} />
             </button>
         </div>
     );
