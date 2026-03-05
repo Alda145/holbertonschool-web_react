@@ -2,7 +2,6 @@ import './Notifications.css';
 import close from './assets/close-button.png';
 
 const Notifications = () => {
-
     const getLatestNotification = () => '<strong>Urgent requirement</strong> - complete by EOD';
 
     return (
