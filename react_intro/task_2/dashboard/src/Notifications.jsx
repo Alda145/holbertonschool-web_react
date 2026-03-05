@@ -1,8 +1,9 @@
 import './Notifications.css'
 import close from './assets/close-button.png'
+import {getLatestNotification} from './utils' 
 
 const Notification = () => {
-    return <div className="notification-items d-flex justify-content-between ">
+    return <div className="notification-items d-flex overflow-hidden ">
 
         <p>Here is the list of notifications</p>
         <ul>
@@ -18,9 +19,9 @@ const Notification = () => {
 
 
         </ul>
-        <button style={{}} aria-label='Close' onClick={() => { console.log('Close button has been clicked to the console.') }} >
+        <button  aria-label='Close' onClick={() => { console.log('Close button has been clicked to the console.') }} >
 
-            <img src={close} />
+            <img src={close} style={{ width: '30px', height: '30px', float:'right' }} />
         </button>
 
     </div>
