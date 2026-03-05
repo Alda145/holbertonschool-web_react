@@ -1,29 +1,29 @@
-import './Notifications.css';
-import close from './assets/close-button.png';
+import React from "react";
+import closeIcon from "./assets/close-button.png";
+import "./Notifications.css";
 
-const Notifications = () => {
-    const latestNotification = 'Urgent requirement - complete by EOD';
-
+function Notifications() {
     return (
-        <div className="notification-items">
-            
+        <div className="Notifications">
+            <button
+                aria-label="Close"
+                onClick={() => console.log("Close button has been clicked")}
+                style={{ position: "absolute", right: 0 }}
+            >
+                <img src={closeIcon} alt="close" />
+            </button>
+
             <p>Here is the list of notifications</p>
 
             <ul>
                 <li data-priority="default">New course available</li>
                 <li data-priority="urgent">New resume available</li>
-                <li data-priority="urgent">{latestNotification}</li>
+                <li data-priority="urgent">
+                    Urgent requirement - complete by EOD
+                </li>
             </ul>
-
-            <button
-                aria-label="Close"
-                style={{ position: 'absolute', top: '10px', right: '10px' }}
-                onClick={() => console.log('Close button has been clicked')}
-            >
-                <img src={close} style={{ width: '30px', height: '30px' }} alt="close" />
-            </button>
         </div>
     );
-};
+}
 
 export default Notifications;
