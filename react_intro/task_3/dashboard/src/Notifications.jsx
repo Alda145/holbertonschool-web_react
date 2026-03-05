@@ -2,7 +2,8 @@ import './Notifications.css';
 import close from './assets/close-button.png';
 
 const Notifications = () => {
-    const getLatestNotification = () => '<strong>Urgent requirement</strong> - complete by EOD';
+    const latestNotification = 'Urgent requirement - complete by EOD';
+
 
     return (
         <div className="notification-items">
@@ -10,7 +11,7 @@ const Notifications = () => {
             <ul>
                 <li data-priority="default">New course available</li>
                 <li data-priority="urgent">New resume available</li>
-                <li data-priority="urgent" dangerouslySetInnerHTML={{ __html: getLatestNotification() }}></li>
+                <li data-priority="urgent" >{latestNotification}</li>
             </ul>
             <button
                 aria-label="Close"
