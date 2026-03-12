@@ -3,10 +3,11 @@
     position: relative;
 }
 
-.blue {
+
+[data-priority="default"] {
     color: blue;
 }
 
-.red {
+[data-priority="urgent"] {
     color: red;
 }

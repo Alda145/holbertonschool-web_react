@@ -19,7 +19,7 @@ function Notifications() {
                 <li data-priority="default" className="blue">New course available</li>
                 <li data-priority="urgent" className="red">New resume available</li>
                 <li data-priority="urgent" className="red" >
-                    Urgent requirement - complete by EOD
+                    <strong>Urgent requirement</strong> - complete by EOD
                 </li>
             </ul>
         </div>
