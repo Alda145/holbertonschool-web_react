@@ -16,9 +16,9 @@ function Notifications() {
             <p>Here is the list of notifications</p>
 
             <ul>
-                <li data-priority="default" className="course">New course available</li>
-                <li data-priority="urgent" className="resume">New resume available</li>
-                <li data-priority="urgent" className="resume" >
+                <li data-priority="default" className="blue">New course available</li>
+                <li data-priority="urgent" className="red">New resume available</li>
+                <li data-priority="urgent" className="red" >
                     Urgent requirement - complete by EOD
                 </li>
             </ul>
