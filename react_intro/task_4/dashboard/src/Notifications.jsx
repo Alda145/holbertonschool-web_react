@@ -4,21 +4,21 @@ import "./Notifications.css";
 
 function Notifications() {
     return (
-        <div className="Notifications">
+        <div className="notification-items">
             <button
                 aria-label="Close"
                 onClick={() => console.log("Close button has been clicked")}
                 style={{ position: "absolute", right: "0" }}
             >
-                <img src={closeIcon} alt="close" />
+                <img src={closeIcon} alt="close" style={{ height: "30px", width: "30px" }} />
             </button>
 
             <p>Here is the list of notifications</p>
 
             <ul>
-                <li data-priority="default">New course available</li>
-                <li data-priority="urgent">New resume available</li>
-                <li data-priority="urgent">
+                <li data-priority="default" className="course">New course available</li>
+                <li data-priority="urgent" className="resume">New resume available</li>
+                <li data-priority="urgent" className="urgent" >
                     Urgent requirement - complete by EOD
                 </li>
             </ul>
