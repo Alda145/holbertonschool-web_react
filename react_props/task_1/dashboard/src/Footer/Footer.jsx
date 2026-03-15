@@ -3,6 +3,8 @@ import { getCurrentYear, getFooterCopy } from "../utils/utils";
 import "./Footer.css";
 
 function Footer() {
+
+    const date = new Date ()
     return (
         <div className="App-footer">
             <p>
