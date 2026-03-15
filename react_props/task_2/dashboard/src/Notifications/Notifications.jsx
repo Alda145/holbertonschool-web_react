@@ -1,29 +1,40 @@
 import React from "react";
-import closeIcon from "../assets/close-button.png";
+import PropTypes from "prop-types";
+import NotificationItem from "./NotificationItem";
 import "./Notifications.css";
 
-function Notifications() {
+const Notifications = ({ notifications }) => {
     return (
-        <div className="notification-items">
-            <button
-                aria-label="Close"
-                onClick={() => console.log("Close button has been clicked")}
-                style={{ position: "absolute", right: "0" }}
-            >
-                <img src={closeIcon} alt="close" style={{ height: "30px", width: "30px" }} />
-            </button>
-
-            <p>Here is the list of notifications</p>
-
+        <div className="Notifications">
             <ul>
-                <li data-priority="default" className="blue">New course available</li>
-                <li data-priority="urgent" className="red">New resume available</li>
-                <li data-priority="urgent" className="red" >
-                    <strong>Urgent requirement</strong> - complete by EOD
-                </li>
+                {notifications.map((notif) => (
+                    <NotificationItem
+                        key={notif.id}
+                        type={notif.type}
+                        value={notif.value}
+                        html={notif.html}
+                    />
+                ))}
             </ul>
         </div>
     );
-}
+};
+
+Notifications.propTypes = {
+    notifications: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number,
+            type: PropTypes.string,
+            value: PropTypes.string,
+            html: PropTypes.shape({
+                __html: PropTypes.string,
+            }),
+        })
+    ),
+};
+
+Notifications.defaultProps = {
+    notifications: [],
+};
 
 export default Notifications;
