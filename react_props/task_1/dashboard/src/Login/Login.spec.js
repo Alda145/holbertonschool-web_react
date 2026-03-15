@@ -3,6 +3,7 @@ import { render, fireEvent } from "@testing-library/react";
 import Login from "./Login";
 
 describe("Login component", () => {
+
     it("renders 2 labels, 2 inputs and 1 button", () => {
         const { container } = render(<Login />);
 
@@ -19,10 +20,11 @@ describe("Login component", () => {
         const { container } = render(<Login />);
 
         const emailLabel = container.querySelector('label[for="email"]');
-        const emailInput = container.querySelector("#email");
+        const emailInput = container.querySelector('#email');
 
         fireEvent.click(emailLabel);
 
-        expect(document.activeElement).toBe(emailInput);
+        expect(emailInput).toBe(document.activeElement);
     });
+
 });
