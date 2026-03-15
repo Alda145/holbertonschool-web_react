@@ -12,7 +12,7 @@ function Login() {
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" />
 
-                <button>OK</button>
+                <button type="button">OK</button>
             </form>
         </div>
     );
