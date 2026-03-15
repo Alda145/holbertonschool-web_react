@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const NotificationItem = ({ type, value, html }) => {
+function NotificationItem({ type, value, html }) {
     const color = type === "urgent" ? "red" : "blue";
 
     return (
@@ -13,7 +13,7 @@ const NotificationItem = ({ type, value, html }) => {
             {!html && value}
         </li>
     );
-};
+}
 
 NotificationItem.propTypes = {
     type: PropTypes.string,
