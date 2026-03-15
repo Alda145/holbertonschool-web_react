@@ -6,7 +6,7 @@ import Footer from "../Footer/Footer";
 
 
 const App = () => {
-  const date = new Date()
+
 
 
   return (
