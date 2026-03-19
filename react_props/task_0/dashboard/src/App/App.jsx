@@ -1,14 +1,12 @@
+/* eslint-disable */
+import { Fragment } from 'react';
+import Notifications from '../Notifications/Notifications';
+import Header from '../Header/Header';
+import Login from '../Login/Login';
+import Footer from '../Footer/Footer';
+import './App.css'
 
-import Notifications from "../Notifications/Notifications";
-import Login from '../Login/Login'
-import Header from '../Header/Header'
-import Footer from "../Footer/Footer";
-
-
-const App = () => {
-  
-
-
+function App() {
   return (
     <>
       <div className="root-notifications">
@@ -18,7 +16,7 @@ const App = () => {
       <Login />
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
