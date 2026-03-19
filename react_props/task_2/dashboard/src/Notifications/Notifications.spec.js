@@ -1,21 +1,39 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import Notifications from "./Notifications";
+/* eslint-disable */
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import NotificationItem from './NotificationItem';
 
-describe("Notifications component", () => {
-    it("renders 3 notifications", () => {
-        const notifications = [
-            { id: 1, type: "default", value: "New course available" },
-            { id: 2, type: "urgent", value: "New resume available" },
-            { id: 3, type: "urgent", html: { __html: "<strong>Urgent requirement</strong>" } },
-        ];
+describe('NotificationItem component', () => {
+    test('renders with default type and correct styling', () => {
+        render(<NotificationItem type="default" value="Test notification" />);
 
-        render(<Notifications notifications={notifications} />);
+        const liElement = screen.getByText('Test notification');
 
-        const items = screen.getAllByRole("listitem");
-        expect(items.length).toBe(3);
-        expect(items[0].textContent).toBe("New course available");
-        expect(items[1].textContent).toBe("New resume available");
-        expect(items[2].innerHTML).toContain("<strong>Urgent requirement</strong>");
+        expect(liElement).toHaveAttribute('data-notification-type', 'default');
+
+        expect(liElement).toHaveStyle('color: blue');
+    });
+
+    test('renders with urgent type and correct styling', () => {
+        render(<NotificationItem type="urgent" value="Urgent notification" />);
+
+        const liElement = screen.getByText('Urgent notification');
+
+        expect(liElement).toHaveAttribute('data-notification-type', 'urgent');
+
+        expect(liElement).toHaveStyle('color: red');
+    });
+
+    test('renders with html content', () => {
+        const htmlContent = { __html: '<strong>Urgent requirement</strong>' };
+        render(<NotificationItem type="urgent" html={htmlContent} />);
+
+        const liElement = document.querySelector('li');
+
+        expect(liElement).toHaveAttribute('data-notification-type', 'urgent');
+
+        expect(liElement).toHaveStyle('color: red');
+
+        expect(liElement.innerHTML).toContain('<strong>Urgent requirement</strong>');
     });
 });

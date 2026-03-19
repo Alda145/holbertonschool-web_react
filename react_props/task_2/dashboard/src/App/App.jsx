@@ -1,18 +1,30 @@
+/* eslint-disable */
+import { Fragment } from 'react';
+import Notifications from '../Notifications/Notifications';
+import Header from '../Header/Header';
+import Login from '../Login/Login';
+import Footer from '../Footer/Footer';
+import { getLatestNotification } from '../utils/utils';
+import './App.css'
 
-import Notifications from "../Notifications/Notifications";
-import Login from '../Login/Login'
-import Header from '../Header/Header'
-import Footer from "../Footer/Footer";
-
-
-const App = () => {
-  // Array of notifications
+function App() {
   const notificationsList = [
-    { id: 1, type: "default", value: "New course available" },
-    { id: 2, type: "urgent", value: "New resume available" },
-    { id: 3, type: "urgent", html: { __html: "<strong>Urgent requirement</strong>" } },
+    {
+      id: 1,
+      type: 'default',
+      value: 'New course available'
+    },
+    {
+      id: 2,
+      type: 'urgent',
+      value: 'New resume available'
+    },
+    {
+      id: 3,
+      type: 'urgent',
+      html: { __html: getLatestNotification() }
+    }
   ];
-
 
   return (
     <>
@@ -23,7 +35,7 @@ const App = () => {
       <Login />
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

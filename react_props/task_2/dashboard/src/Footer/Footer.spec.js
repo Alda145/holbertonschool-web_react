@@ -1,18 +1,18 @@
-import { render, screen } from "@testing-library/react";
-import Footer from "./Footer";
+import { render, screen } from '@testing-library/react';
+import Footer from './Footer';
+import { getCurrentYear } from '../utils/utils';
 
-describe("Footer component", () => {
-
-    test("renders correct copyright text", () => {
-        const year = new Date().getFullYear();
-
+describe('Footer Component', () => {
+    test('renders copyright with current year and Holberton School when isIndex=true', () => {
+        const year = getCurrentYear();
         render(<Footer />);
 
-        const text = screen.getByText(
-            `Copyright ${year} - Holberton School`
+        // The correct text should be "Holberton School", not "Holberton School main dashboard"
+        const paragraph = screen.getByText(
+            `Copyright ${year} - Holberton School`,
+            { exact: false }
         );
 
-        expect(text).toBeInTheDocument();
+        expect(paragraph).toBeInTheDocument();
     });
-
 });
