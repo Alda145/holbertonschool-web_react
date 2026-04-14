@@ -1,42 +1,31 @@
 import { useState } from "react";
 
-const useLogin = (props) => {
+const useLogin = (props = {}) => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [enableSubmit, setEnableSubmit] = useState(false);
-    const [formData, setFormData] = useState({ email: "", password: "" });
 
-    const validateForm = (email, password) => {
+    const validateForm = (currentEmail, currentPassword) => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email) && password.length >= 8;
+        return emailRegex.test(currentEmail) && currentPassword.length >= 8;
     };
 
     const handleChangeEmail = (e) => {
-        const email = e.target.value;
-        const { password } = formData;
+        const newEmail = e.target.value;
 
-        setFormData((prevFormData) => ({
-            ...prevFormData,
-            email,
-        }));
-
-        setEnableSubmit(validateForm(email, password));
+        setEmail(newEmail);
+        setEnableSubmit(validateForm(newEmail, password));
     };
 
     const handleChangePassword = (e) => {
-        const password = e.target.value;
-        const { email } = formData;
+        const newPassword = e.target.value;
 
-        setFormData((prevFormData) => ({
-            ...prevFormData,
-            password,
-        }));
-
-        setEnableSubmit(validateForm(email, password));
+        setPassword(newPassword);
+        setEnableSubmit(validateForm(email, newPassword));
     };
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
-
-        const { email, password } = formData;
 
         if (props.logIn) {
             props.logIn(email, password);
@@ -44,7 +33,8 @@ const useLogin = (props) => {
     };
 
     return {
-        formData,
+        email,
+        password,
         enableSubmit,
         handleChangeEmail,
         handleChangePassword,

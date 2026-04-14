@@ -3,7 +3,8 @@ import "./Login.css";
 
 function Login(props) {
     const {
-        formData,
+        email,
+        password,
         enableSubmit,
         handleChangeEmail,
         handleChangePassword,
@@ -20,7 +21,7 @@ function Login(props) {
                     type="text"
                     id="email"
                     name="email"
-                    value={formData.email}
+                    value={email}
                     onChange={handleChangeEmail}
                 />
 
@@ -29,7 +30,7 @@ function Login(props) {
                     type="password"
                     id="password"
                     name="password"
-                    value={formData.password}
+                    value={password}
                     onChange={handleChangePassword}
                 />
 
