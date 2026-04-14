@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useLogin = (props = {}) => {
+const useLogin = (onLogin) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [enableSubmit, setEnableSubmit] = useState(false);
@@ -24,9 +24,8 @@ const useLogin = (props = {}) => {
 
     const handleLoginSubmit = (e) => {
         e.preventDefault();
-
-        if (props.onLogin) {
-            props.onLogin(email, password);
+        if (enableSubmit && onLogin) {
+            onLogin(email, password);
         }
     };
 

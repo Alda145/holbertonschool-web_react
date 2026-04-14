@@ -9,7 +9,7 @@ function Login(props) {
         handleChangeEmail,
         handleChangePassword,
         handleLoginSubmit,
-    } = useLogin(props);
+    } = useLogin(props.logIn);
 
     return (
         <div className="App-body">
@@ -18,7 +18,7 @@ function Login(props) {
             <form onSubmit={handleLoginSubmit}>
                 <label htmlFor="email">Email</label>
                 <input
-                    type="text"
+                    type="email"
                     id="email"
                     name="email"
                     value={email}
